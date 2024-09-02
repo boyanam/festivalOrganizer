@@ -3,6 +3,7 @@ import Root from "./Root";
 import ErrorPage from "./pages/ErrorPage";
 import AdminPage from "./pages/AdminPage";
 import OrganizersPage from "./pages/OrganizersPage";
+import Organizer from "./pages/Organizer";
 
 export const router = createBrowserRouter([
   {
@@ -12,6 +13,7 @@ export const router = createBrowserRouter([
     children: [
       { path: "admin", element: <AdminPage /> },
       { path: "", element: <OrganizersPage /> },
+      { path: "organizers/:organizerName", element: <Organizer /> },
       //dodaj login ovde i kao stranicu
     ],
   },
