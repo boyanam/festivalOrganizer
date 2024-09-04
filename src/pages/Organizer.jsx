@@ -1,7 +1,15 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 //dodati funkcije za fetchovanje pojedincnog organizatora i pojedinacne grupe festivala
+import { useFestivals } from "../firebaseQueries";
 
 const Organizer = ({ title, logo, email, contact, year, festivals }) => {
+  const { festivalsId } = useParams();
+  debugger;
+  const { data, error, isLoading } = useFestivals(festivalsId);
+  if (isLoading) return <div className="text-white">Loading...</div>;
+  if (error) return <div className="text-white">Error : {error.message}</div>;
+  debugger;
   return (
     <div className="flex">
       <div className="flex flex-col items-start p-4 bg-gray-800 text-white w-64 fixed left-4 top-28">

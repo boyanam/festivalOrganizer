@@ -13,7 +13,7 @@ export const router = createBrowserRouter([
     children: [
       { path: "admin", element: <AdminPage /> },
       { path: "", element: <OrganizersPage /> },
-      { path: "organizers/:organizerName", element: <Organizer /> },
+      { path: "organizers/:festivalsId", element: <Organizer /> },
       //dodaj login ovde i kao stranicu
     ],
   },
